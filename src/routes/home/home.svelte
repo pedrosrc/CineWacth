@@ -1,13 +1,13 @@
 <script>
 	import { onMount } from 'svelte';
     import api from '../../services/api';
-
+    
     let movies = [];
 
     onMount( async() => {
         const response = await api.get('movie/now_playing', {
             params:{
-                api_key: "e497db75384a8e566e73381e11b886e4",
+                api_key: import.meta.env.VITE_KEYAPI,
                 language: 'pt-BR',
                 page: 1
             }
@@ -18,13 +18,13 @@
 
 </script>
 
-<section>
+<section class="container_home">
     <h2>Filmes em Cartazes</h2>
     <div class="movies">
         {#each movies as movie}
             <div class="movie">
                 <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title}>
-                <span>{movie.title}</span>
+                <span><a href={`/movie/${movie.id}`}>{movie.title}</a></span>
             </div>
         {/each}
     </div>
@@ -34,11 +34,17 @@
 <style>
 	h2 {
 		font-size: 2em;
-        text-align: left;
-        font-weight: bolder;
+        text-align: start;
+        margin-left: 5em;
+        font-weight: lighter;
         font-style: italic;
+        background-image: linear-gradient(80deg, blueviolet, #0D1117);
+        background-repeat: no-repeat;
+        background-size: 30% 3px;
+        background-position: left bottom;
 	}
     .movies{
+        width: 100%;
         display: flex;
         margin: 0 auto;
         justify-content: center;
@@ -47,11 +53,15 @@
     }
     .movie{
         display: flex;
-        width: 350px;
-        margin: 5px;
+        width: 300px;
+        margin: 10px;
         flex-direction: column;
     }
     .movie > img{
+        width: 200px;
+    }
+    .movie > span{
+        margin-top: 0.2em;
         width: 200px;
     }
 </style>
