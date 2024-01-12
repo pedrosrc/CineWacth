@@ -18,6 +18,11 @@
 
 </script>
 
+<svelte:head>
+	<title>CineWacth | Home</title>
+	<meta name="Home" content="Svelte demo app" />
+</svelte:head>
+
 <section class="container_home">
     <h2>Filmes em Cartazes</h2>
     <div class="movies">

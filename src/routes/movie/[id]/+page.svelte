@@ -5,7 +5,6 @@
 
     let movieId = $page.params;
     let movie;
-    let imagemUrl= '';
 
     onMount(async () => {
         const response = await api.get(`movie/${movieId.id}`, {
@@ -15,15 +14,12 @@
             },
         });
         movie = await response.data;
-        
     });
-    
 </script>
 
 <section>
     {#if movie}
-        <div class="container_background">
-        </div>
+        <div class="container_background"></div>
         <div class="container_info">
             <div class="poster">
                 <img src="" alt="" />
@@ -50,10 +46,8 @@
 
 <style>
     .container_background {
-        height: 100vh; /* Ajuste conforme necessário */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url({imagemUrl});
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 </style>
