@@ -5,7 +5,7 @@
 </script>
 
 <header>
-    <div><li><FaHome/></li></div>
+    <div><a href="/"><li><FaHome/></li></a></div>
     <div><h1>CineWacth</h1></div>
     <nav>
         <li><MdInfo/></li>
