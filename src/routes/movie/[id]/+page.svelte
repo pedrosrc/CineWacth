@@ -2,7 +2,6 @@
     import { page } from "$app/stores";
     import { onMount } from "svelte";
     import api from "../../../services/api";
-    import StarRating from "@ernane/svelte-star-rating";
     import IoIosHeartEmpty from 'svelte-icons/io/IoIosHeartEmpty.svelte'
     import MdPlayCircleOutline from 'svelte-icons/md/MdPlayCircleOutline.svelte'
 
