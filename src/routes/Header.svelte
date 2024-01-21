@@ -8,7 +8,7 @@
     <div><a href="/"><li><FaHome/></li></a></div>
     <div><h1>CineWacth</h1></div>
     <nav>
-        <li><MdInfo/></li>
+        <li><a href="/about"><MdInfo/></a></li>
         <li><MdCollectionsBookmark/></li>
     </nav>
 </header>
