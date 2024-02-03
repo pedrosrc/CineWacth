@@ -3,6 +3,11 @@
     import IoLogoLinkedin from 'svelte-icons/io/IoLogoLinkedin.svelte'
 </script>
 
+<svelte:head>
+    <title>CineWacth | Sobre</title>
+    <meta name="About" content="Svelte demo app" />
+</svelte:head>
+
 <section class="container_about">
     <div class="section_about">
         <h2>Sobre</h2>
