@@ -7,7 +7,7 @@
     onMount(async () => {
         const response = await api.get("movie/now_playing", {
             params: {
-                api_key: import.meta.env.VITE_KEYAPI,
+                api_key: import.meta.env.VITE_APIKEY,
                 language: "pt-BR",
                 page: 1,
             },
