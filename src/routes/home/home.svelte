@@ -78,6 +78,33 @@
         margin-top: 0.2em;
         width: 200px;
     }
+    @media screen and (max-width: 720px){
+        h2 {
+            font-size: 1.5em;
+            text-align: start;
+            margin-left: 1em;
+        }
+        .movies {
+            align-items: center;
+            justify-content: center;
+        }
+        .movie {
+            width: 160px;
+            margin-top: 10px;
+        }
+        .movie a img {
+            width: 150px;
+            border-radius: 10px;
+        }
+        .movie a{
+            width: 150px;
+            height: 250px;
+            margin: 5px;
+            font-size: 0.8em;
+        }
+
+
+    }
     
     
 </style>

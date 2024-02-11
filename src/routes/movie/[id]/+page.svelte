@@ -47,6 +47,21 @@
             strokeUnfilledColor: "#000",
         },
     };
+
+    function saveMovie(){
+        const myList = localStorage.getItem("@cinewacth")
+        // @ts-ignore
+        let moviessave = JSON.parse(myList) || [];
+        const hasMovie = moviessave.some((moviessave)=> moviessave.id === movie.id)
+        if(hasMovie){
+            alert('O filme já está salvo!')
+        }else{
+            moviessave.push(movie)
+            localStorage.setItem("@cinewacth", JSON.stringify(moviessave))
+            alert('Filme salvo com sucesso!')
+        }
+    }
+    
 </script>
 
 <section class="container_movie">
@@ -71,8 +86,8 @@
                 <span class="rating"><StarRating {config}/></span>
                 <p>{movie.overview}</p>
                 <div class="buttons">
-                    <button><svg><IoIosHeartEmpty /></svg> Salvar</button>
-                    <button><svg><MdPlayCircleOutline /></svg>Trailer</button>
+                    <button on:click={saveMovie}><svg><IoIosHeartEmpty /></svg> Salvar</button>
+                    <a href={`https://youtube.com/results?search_query=${movie.title} trailer`} target="_blank" rel="external"><button><svg><MdPlayCircleOutline /></svg>Trailer</button></a>
                 </div>
             </div>
         </div>
@@ -140,7 +155,11 @@
     .buttons {
         display: flex;
     }
+    .buttons a{
+        text-decoration: none;
+    }
     .buttons button {
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -156,5 +175,34 @@
         width: 20px;
         margin: 0;
         padding: 0;
+    }
+    @media screen and (max-width: 720px){
+        .container_info {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0;
+        }
+        .poster{
+            margin: auto;
+            margin-top: 5em;
+        }
+        .poster img {
+            width: 250px;
+        }
+        .section_info {
+            margin: auto;
+            text-align: center;
+        }
+        .section_info h1 {
+            font-size: 1.3em;
+        }
+        .section_info p {
+            width: 23em;
+            font-size: 0.9em;
+            text-align: justify;
+        }
+
     }
 </style>
