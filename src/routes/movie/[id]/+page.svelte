@@ -4,6 +4,7 @@
     import api from "../../../services/api";
     import IoIosHeartEmpty from "svelte-icons/io/IoIosHeartEmpty.svelte";
     import MdPlayCircleOutline from "svelte-icons/md/MdPlayCircleOutline.svelte";
+    import toast from 'svelte-french-toast';
     // @ts-ignore
     import StarRating from "@ernane/svelte-star-rating";
 
@@ -19,11 +20,11 @@
             },
         });
         movie = await response.data;
-        scoreMovie = Number(movie.vote_average.toFixed(0))
-        console.log(scoreMovie)
+        scoreMovie = Number(movie.vote_average.toFixed(0));
+        console.log(scoreMovie);
     });
-    
-    let config = {}
+
+    let config = {};
 
     $: config = {
         readOnly: true,
@@ -33,7 +34,7 @@
             max: 5,
             step: 0.001,
         },
-        score: (scoreMovie - 0.1 )/2,
+        score: (scoreMovie - 0.1) / 2,
         showScore: true,
         scoreFormat: function () {
             return `(${this.score.toFixed(1)}/${this.countStars})`;
@@ -48,20 +49,21 @@
         },
     };
 
-    function saveMovie(){
-        const myList = localStorage.getItem("@cinewacth")
+    function saveMovie() {
+        const myList = localStorage.getItem("@cinewacth");
         // @ts-ignore
         let moviessave = JSON.parse(myList) || [];
-        const hasMovie = moviessave.some((moviessave)=> moviessave.id === movie.id)
-        if(hasMovie){
-            alert('O filme já está salvo!')
-        }else{
-            moviessave.push(movie)
-            localStorage.setItem("@cinewacth", JSON.stringify(moviessave))
-            alert('Filme salvo com sucesso!')
+        const hasMovie = moviessave.some(
+            (moviessave) => moviessave.id === movie.id,
+        );
+        if (hasMovie) {
+            toast.error("O filme já está salvo!");
+        } else {
+            moviessave.push(movie);
+            localStorage.setItem("@cinewacth", JSON.stringify(moviessave));
+            toast.success("Filme salvo com sucesso!");
         }
     }
-    
 </script>
 
 <section class="container_movie">
@@ -83,11 +85,20 @@
             </div>
             <div class="section_info">
                 <h1>{movie.title}</h1>
-                <span class="rating"><StarRating {config}/></span>
+                <span class="rating"><StarRating {config} /></span>
                 <p>{movie.overview}</p>
                 <div class="buttons">
-                    <button on:click={saveMovie}><svg><IoIosHeartEmpty /></svg> Salvar</button>
-                    <a href={`https://youtube.com/results?search_query=${movie.title} trailer`} target="_blank" rel="external"><button><svg><MdPlayCircleOutline /></svg>Trailer</button></a>
+                    <button on:click={saveMovie}
+                        ><svg><IoIosHeartEmpty /></svg> Salvar</button
+                    >
+                    <a
+                        href={`https://youtube.com/results?search_query=${movie.title} trailer`}
+                        target="_blank"
+                        rel="external"
+                        ><button
+                            ><svg><MdPlayCircleOutline /></svg>Trailer</button
+                        ></a
+                    >
                 </div>
             </div>
         </div>
@@ -109,6 +120,10 @@
         margin-left: 16em;
         position: absolute;
         z-index: 2;
+    }
+    .rating {
+        display: flex;
+        justify-content: left;
     }
     .backdrop {
         width: 100%;
@@ -149,13 +164,13 @@
         width: 30em;
         font-size: 1.2em;
     }
-    .rating{
+    .rating {
         justify-content: left;
     }
     .buttons {
         display: flex;
     }
-    .buttons a{
+    .buttons a {
         text-decoration: none;
     }
     .buttons button {
@@ -176,7 +191,7 @@
         margin: 0;
         padding: 0;
     }
-    @media screen and (max-width: 720px){
+    @media screen and (max-width: 720px) {
         .container_info {
             width: 100%;
             display: flex;
@@ -184,7 +199,7 @@
             flex-direction: column;
             margin: 0;
         }
-        .poster{
+        .poster {
             margin: auto;
             margin-top: 5em;
         }
@@ -203,6 +218,13 @@
             font-size: 0.9em;
             text-align: justify;
         }
-
+        .rating {
+            display: flex;
+            justify-content: center;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
     }
 </style>
