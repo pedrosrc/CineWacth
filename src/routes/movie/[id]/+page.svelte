@@ -191,7 +191,7 @@
         margin: 0;
         padding: 0;
     }
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 960px) {
         .container_info {
             width: 100%;
             display: flex;
