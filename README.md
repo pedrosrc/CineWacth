@@ -1,38 +1,42 @@
-# create-svelte
+<h1 align="center": center">CineWacth</h1>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+CineWatch é uma aplicação web desenvolvida para entusiastas de cinema que desejam estar atualizados sobre os principais filmes em alta nos cartazes do mundo. Com uma interface intuitiva e fácil de usar, CineWatch permite que os usuários descubram informações detalhadas sobre os filmes mais populares, incluindo descrições, avaliações e muito mais. Além disso, os usuários têm a conveniência de salvar seus filmes favoritos em uma lista personalizada para referência futura.
 
-## Creating a project
+<h3 align="center">Confira meu projeto <a href="https://my-portfolio-pedrosrc.vercel.app/">clicando aqui🔗</a></h3>
 
-If you're seeing this, you've probably already done this step. Congrats!
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+### Tela Inicial
+<img src="./img/home.png" />
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+### Tela sobre o Filme
+<img src="./img/movie.png" />
 
-## Developing
+## Funcionalidades Principais
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Listagem de Filmes em Alta
+CineWatch oferece uma lista atualizada dos principais filmes em alta nos cinemas de todo o mundo. Os usuários podem facilmente navegar por esta lista e encontrar os filmes que desejam saber mais.
 
-```bash
-npm run dev
+Detalhes do Filme
+Para cada filme listado, os usuários podem acessar informações detalhadas, incluindo uma descrição completa do enredo, elenco, diretor, classificação indicativa e avaliações dos críticos.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+Salvar na Lista de Favoritos
+Os usuários têm a capacidade de salvar os filmes que desejam assistir mais tarde em uma lista de favoritos personalizada. Esta funcionalidade permite que os usuários organizem e acessem facilmente os filmes que despertam seu interesse.
 
-## Building
+## Instalação e Configuração
+CineWatch é uma aplicação web que pode ser acessada diretamente através de qualquer navegador da web, sem a necessidade de instalação ou configuração adicional.
 
-To create a production version of your app:
+## Tecnologias Utilizadas
+<ul>
+  <li>SvelteKit</li>
+</ul>
 
-```bash
-npm run build
-```
+## Contribuição
+Contribuições são bem-vindas! Se você deseja contribuir para o desenvolvimento do CineWatch, por favor, siga estas etapas:
 
-You can preview the production build with `npm run preview`.
+1. Fork o repositório.
+2. Crie uma branch para sua feature (git checkout -b feature/nova-feature).
+3. Faça commit das suas mudanças (git commit -am 'Adiciona uma nova feature').
+4. Faça push para a branch (git push origin feature/nova-feature).
+5. Crie um novo Pull Request.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Espero que você aproveite a experiência do CineWatch! Se você tiver alguma dúvida, problema ou sugestão, não hesite em entrar em contato comigo!
