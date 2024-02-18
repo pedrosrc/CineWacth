@@ -5,7 +5,7 @@
 
 <svelte:head>
     <title>CineWacth | Sobre</title>
-    <meta name="About" content="Svelte demo app" />
+    <meta name="About" content="Conhecendo o CineWacth" />
 </svelte:head>
 
 <section class="container_about">

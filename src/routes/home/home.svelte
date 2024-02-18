@@ -18,7 +18,7 @@
 
 <svelte:head>
     <title>CineWacth | Home</title>
-    <meta name="Home" content="Svelte demo app" />
+    <meta name="Home" content="CineWacth é o lugar onde você pode ver os principais filmes em cartazes em tempo real e mais detalhes sobre eles." />
 </svelte:head>
 
 <section class="container_home">

@@ -66,6 +66,11 @@
     }
 </script>
 
+<svelte:head>
+    <title>CineWacth | Filme</title>
+    <meta name="About" content="Confira detalhes sobre o filme escolhido no CineWacth" />
+</svelte:head>
+
 <section class="container_movie">
     {#if movie}
         <div class="backdrop">

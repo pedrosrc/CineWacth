@@ -22,6 +22,11 @@
   }
 </script>
 
+<svelte:head>
+    <title>CineWacth | Minha Lista</title>
+    <meta name="About" content="Confira sua lista de filmes salvos no CineWacth" />
+</svelte:head>
+
 <section class="container_list">
   <h2>Sua Lista</h2>
   {#if movies}
